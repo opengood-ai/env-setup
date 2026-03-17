@@ -1,7 +1,7 @@
 # Environment Setup
 
-[![Build](https://github.com/opengood-aio/env-setup/workflows/build/badge.svg)](https://github.com/opengood-aio/env-setup/actions?query=workflow%3Abuild)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/opengood-aio/env-setup/master/LICENSE)
+[![Build](https://github.com/opengood-ai/env-setup/workflows/build/badge.svg)](https://github.com/opengood-ai/env-setup/actions?query=workflow%3Abuild)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/opengood-ai/env-setup/master/LICENSE)
 
 Automated environment setup and configuration for OpenGood computing
 environments
@@ -40,7 +40,7 @@ mkdir -p ~/workspace
 
 ```bash
 cd ~/workspace
-git clone https://github.com/opengood-aio/env-setup
+git clone https://github.com/opengood-ai/env-setup
 cd env-setup
 ```
 
@@ -61,6 +61,7 @@ cd env-setup
 #### Required Packages (Standard Tools)
 
 * `bats` - Bash Automated Testing System
+* `claude_code` - Anthropic's official CLI for Claude
 * `dockutil` - Dock management utility
 * `gcc` - GNU Compiler Collection
 * `gradle` - Build automation tool
@@ -71,7 +72,6 @@ cd env-setup
 * `jq` - JSON processor
 * `kotlin` - Kotlin programming language
 * `ktlint` - Kotlin linter
-* `llm_context` - LLM context management tool
 * `maccy` - Clipboard manager
 * `node` - Node.js runtime
 * `os_prefs` - macOS preferences configuration
@@ -91,6 +91,7 @@ cd env-setup
 * `kafka` - Distributed streaming platform
 * `llama_cpp` - C/C++ implementation for running LLMs locally
 * `minikube` - Local Kubernetes cluster
+* `neo4j Desktop` - Graph database management system
 * `ollama` - Run large language models locally
 * `postgres` - PostgresSQL database
 
