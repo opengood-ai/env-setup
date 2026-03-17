@@ -67,12 +67,9 @@ install_os_prefs() {
     dockutil --add "${apps_dir}/Google Chrome.app" --no-restart 2>/dev/null || true
     dockutil --add '' --type small-spacer --after 'Google Chrome' --no-restart 2>/dev/null || true
 
-    # Email
+    # Email, Messaging & Video
     dockutil --add "${apps_dir}/Canary Mail.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/Microsoft Outlook.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'Microsoft Outlook' --no-restart 2>/dev/null || true
-
-    # Messaging & Video
     dockutil --add "${apps_dir}/Messages.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/Microsoft Teams.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/FaceTime.app" --no-restart 2>/dev/null || true
@@ -81,6 +78,7 @@ install_os_prefs() {
 
     # Productivity
     dockutil --add "${apps_dir}/Obsidian.app" --no-restart 2>/dev/null || true
+    dockutil --add "${apps_dir}/Goodnotes.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/Notes.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/MacWhisper.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/Reminders.app" --no-restart 2>/dev/null || true
@@ -92,6 +90,7 @@ install_os_prefs() {
     dockutil --add "${apps_dir}/IntelliJ IDEA.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/PyCharm.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/iTerm.app" --no-restart 2>/dev/null || true
+    dockutil --add "${apps_dir}/Neo4j Desktop 2.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/Docker.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/Orka Desktop.app" --no-restart 2>/dev/null || true
     dockutil --add '' --type small-spacer --after 'Orka Desktop' --no-restart 2>/dev/null || true
@@ -103,9 +102,11 @@ install_os_prefs() {
     dockutil --add '' --type small-spacer --after 'QIDI Print' --no-restart 2>/dev/null || true
 
     # File Sync and Backup
+    dockutil --add "${apps_dir}/Disk Drill.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/GoodSync.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/pCloud Drive.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'pCloud Drive' --no-restart 2>/dev/null || true
+    dockutil --add "${apps_dir}/OneDrive.app" --no-restart 2>/dev/null || true
+    dockutil --add '' --type small-spacer --after 'OneDrive' --no-restart 2>/dev/null || true
 
     # Entertainment
     dockutil --add "${apps_dir}/TV.app" --no-restart 2>/dev/null || true
@@ -130,6 +131,7 @@ install_os_prefs() {
     # Home & Location
     dockutil --add "${apps_dir}/Home.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/ControllerForHomeKit.app" --no-restart 2>/dev/null || true
+    dockutil --add "${apps_dir}/SwitchBot.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/FindMy.app" --no-restart 2>/dev/null || true
     dockutil --add '' --type small-spacer --after 'FindMy' --no-restart 2>/dev/null || true
 
