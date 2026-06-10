@@ -37,16 +37,12 @@ bin/setup-workstation.sh uninstall <package>
 bin/setup-workstation.sh uninstall all
 ```
 
-### BMad-core Sync
+### BMad Install/Update
 
-Sync BMad-Method framework from npm package:
+Install or update BMad-Method framework:
 
 ```bash
-# Sync to current directory (default)
-bin/sync-bmad-core.sh
-
-# Sync to specific subdirectory
-bin/sync-bmad-core.sh path/to/project
+npx bmad-method install
 ```
 
 ### Testing
@@ -102,14 +98,16 @@ bats test/package.bats
 The package system uses a convention-based approach:
 
 - Package scripts in `packages/` are loaded automatically
-- Package names map to function names: `install_git`, `install_docker`, etc.
+- Package names map to function names: `install_git`, `install_docker_desktop`, etc.
 - Dependencies can be declared via `get_<package>_dependencies()` function
 - Package arrays in `config/packages.sh`:
     - `base_packages`: Core tools (homebrew, vim, bash, bash_it, git)
-    - `required_packages`: Standard development tools (includes dependencies like
-      dockutil, gcc, node)
-    - `optional_packages`: Additional tools (docker, docker_compose, gnused,
-      google_chrome, kafka, minikube, ollama, os_prefs, postgres)
+    - `required_packages`: Standard development tools (bats, claude_code, dockutil,
+      gcc, google_chrome, iterm, jq, maccy, node, os_prefs, pip, pycharm, python,
+      rectangle, uv)
+    - `optional_packages`: Additional tools (docker_compose, docker_desktop, gnused,
+      gradle, intellij_idea, java, jenv, kafka, kotlin, ktlint, llama_cpp,
+      minikube, neo4j_desktop, ollama, postgres, sqlite)
     - `supported_node_packages`: Node.js packages
     - `supported_pip_packages`: Python packages
 

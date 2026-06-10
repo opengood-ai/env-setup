@@ -6,7 +6,6 @@ install_bash_it() {
         write_info "Installing bash-it dependencies..."
         brew list coreutils &>/dev/null || brew install coreutils
         brew list grc &>/dev/null || brew install grc
-        brew list rbenv &>/dev/null || brew install rbenv
         brew list watch &>/dev/null || brew install watch
         write_success "Done!"
         write_blank_line
@@ -47,9 +46,8 @@ install_bash_it() {
         write_success "Done!"
         write_blank_line
 
-        write_info "Enabling plugins for SSH and rbenv..."
+        write_info "Enabling plugins for SSH..."
         "${bash_it_dir}"/bash_it.sh enable plugin ssh
-        "${bash_it_dir}"/bash_it.sh enable plugin rbenv
         write_success "Done!"
         write_blank_line
 
@@ -71,7 +69,6 @@ uninstall_bash_it() {
     write_info "Uninstalling bash-it dependencies..."
     brew uninstall coreutils || { write_warning "WARNING! coreutils is not installed and cannot be uninstalled. Continuing on."; }
     brew uninstall grc || { write_warning "WARNING! grc is not installed and cannot be uninstalled. Continuing on."; }
-    brew uninstall rbenv || { write_warning "WARNING! rbenv is not installed and cannot be uninstalled. Continuing on."; }
     brew uninstall watch || { write_warning "WARNING! watch is not installed and cannot be uninstalled. Continuing on."; }
     write_success "Done!"
     write_blank_line

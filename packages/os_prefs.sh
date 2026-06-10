@@ -69,17 +69,15 @@ install_os_prefs() {
 
     # Email, Messaging & Video
     dockutil --add "${apps_dir}/Canary Mail.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Microsoft Outlook.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/Messages.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Microsoft Teams.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/FaceTime.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/zoom.us.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'zoom.us' --no-restart 2>/dev/null || true
+    dockutil --add "${apps_dir}/Microsoft Outlook.app" --no-restart 2>/dev/null || true
+    dockutil --add "${apps_dir}/Microsoft Teams.app" --no-restart 2>/dev/null || true
+    dockutil --add '' --type small-spacer --after 'Microsoft Teams' --no-restart 2>/dev/null || true
 
     # Productivity
     dockutil --add "${apps_dir}/Obsidian.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/Goodnotes.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Notes.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/MacWhisper.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/Reminders.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/Relog.app" --no-restart 2>/dev/null || true
@@ -87,7 +85,6 @@ install_os_prefs() {
     dockutil --add '' --type small-spacer --after 'Calendar' --no-restart 2>/dev/null || true
 
     # Software Engineering
-    dockutil --add "${apps_dir}/IntelliJ IDEA.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/PyCharm.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/iTerm.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/Neo4j Desktop 2.app" --no-restart 2>/dev/null || true
@@ -97,7 +94,6 @@ install_os_prefs() {
 
     # AI & Computing
     dockutil --add "${apps_dir}/Claude.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Wolfram.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/QIDI Print.app" --no-restart 2>/dev/null || true
     dockutil --add '' --type small-spacer --after 'QIDI Print' --no-restart 2>/dev/null || true
 
@@ -117,7 +113,6 @@ install_os_prefs() {
     # Creative
     dockutil --add "${apps_dir}/Canva.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/Final Cut Pro.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/EaseUS Video Downloader.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/Wondershare UniConverter 17.app" --no-restart 2>/dev/null || true
     dockutil --add '' --type small-spacer --after 'Wondershare UniConverter 17' --no-restart 2>/dev/null || true
 
@@ -130,7 +125,6 @@ install_os_prefs() {
 
     # Home & Location
     dockutil --add "${apps_dir}/Home.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/ControllerForHomeKit.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/SwitchBot.app" --no-restart 2>/dev/null || true
     dockutil --add "${apps_dir}/FindMy.app" --no-restart 2>/dev/null || true
     dockutil --add '' --type small-spacer --after 'FindMy' --no-restart 2>/dev/null || true
