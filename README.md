@@ -64,14 +64,9 @@ cd env-setup
 * `claude_code` - Anthropic's official CLI for Claude
 * `dockutil` - Dock management utility
 * `gcc` - GNU Compiler Collection
-* `gradle` - Build automation tool
-* `intellij_idea` - JetBrains IDE for Java/Kotlin
+* `google_chrome` - Google Chrome web browser
 * `iterm` - Terminal emulator for macOS
-* `java` - Java Development Kit
-* `jenv` - Java environment manager
 * `jq` - JSON processor
-* `kotlin` - Kotlin programming language
-* `ktlint` - Kotlin linter
 * `maccy` - Clipboard manager
 * `node` - Node.js runtime
 * `os_prefs` - macOS preferences configuration
@@ -83,17 +78,22 @@ cd env-setup
 
 #### Additional Packages (Optional Tools)
 
-* `docker` - Container platform
-* `docker_compose` - Docker Compose tool for defining multi-container
-  applications
+* `docker_compose` - Docker Compose tool for defining multi-container applications
+* `docker_desktop` - Docker Desktop container platform
 * `gnused` - GNU implementation of sed
-* `google_chrome` - Google Chrome web browser
+* `gradle` - Build automation tool
+* `intellij_idea` - JetBrains IDE for Java/Kotlin
+* `java` - Java Development Kit
+* `jenv` - Java environment manager
 * `kafka` - Distributed streaming platform
+* `kotlin` - Kotlin programming language
+* `ktlint` - Kotlin linter
 * `llama_cpp` - C/C++ implementation for running LLMs locally
 * `minikube` - Local Kubernetes cluster
-* `neo4j Desktop` - Graph database management system
+* `neo4j_desktop` - Graph database management system
 * `ollama` - Run large language models locally
 * `postgres` - PostgresSQL database
+* `sqlite` - SQLite embedded database
 
 ---
 
@@ -144,51 +144,13 @@ bin/setup-workstation.sh uninstall all
 
 ## Custom Tools
 
-### Sync BMad-Core
+### Install/Update BMad
 
-To install or update `.bmad-core` with the latest `bmad-method` npm package:
-
-#### Install to current project (default)
+To install or update BMad-Method framework:
 
 ```bash
-bin/sync-bmad-core.sh
+npx bmad-method install
 ```
-
-#### Install to another project in workspace
-
-```bash
-bin/sync-bmad-core.sh <relative-path>
-```
-
-#### Show help
-
-```bash
-bin/sync-bmad-core.sh -h
-```
-
-**Examples:**
-
-#### Install to env-setup project (default)
-
-```bash
-bin/sync-bmad-core.sh
-```
-
-#### Install to my-project in workspace
-
-```bash
-bin/sync-bmad-core.sh my-project
-```
-
-**Notes:**
-
-* Takes optional parameter for relative directory path from workspace directory
-* Defaults to current project (env-setup) if no parameter provided
-* Installs the latest `bmad-method` package in a temporary directory
-* Backups existing `.bmad-core` directory with timestamp (if it exists)
-* Copies the new `.bmad-core` to specified installation directory
-* Copies updated BMad commands to `.claude/commands/BMad` (if applicable)
-* Verifies installation directory exists before proceeding
 
 ---
 

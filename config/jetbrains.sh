@@ -37,8 +37,8 @@ jetbrains_homebrew_packages["${jetbrains_py_charm_pro_product_code}"]="pycharm"
 
 # JetBrains settings resource files (indexed by product code)
 declare -gA jetbrains_resources
-jetbrains_resources["${jetbrains_intellij_idea_ultimate_product_code}"]="intellij_idea_settings.zip"
-jetbrains_resources["${jetbrains_py_charm_pro_product_code}"]="intellij_idea_settings.zip"
+jetbrains_resources["${jetbrains_intellij_idea_ultimate_product_code}"]="jetbrains_ide_settings.zip"
+jetbrains_resources["${jetbrains_py_charm_pro_product_code}"]="jetbrains_ide_settings.zip"
 
 # IntelliJ IDEA plugins (plugin name to plugin ID mapping)
 declare -gA jetbrains_intellij_idea_plugins

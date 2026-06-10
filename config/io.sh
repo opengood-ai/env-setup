@@ -29,15 +29,7 @@ zsh_profile=~/.zprofile
 bash_it_dir=~/.bash_it
 bash_it_aliases=~/.bash_it/aliases
 
-# Claude Code configuration
-claude_dir=.claude
-claude_commands_dir=${claude_dir}/commands
-
-# BMad framework configuration
-bmad_core_dir=.bmad-core
-bmad_commands_dir=${claude_commands_dir}/BMad
-
-# Docker application directories
+# Docker Desktop application directories
 docker_app=${apps_dir}/Docker.app
 docker_dir=~/.docker
 docker_resources_dir=${docker_app}/Contents/Resources
