@@ -16,10 +16,10 @@ environments
 Installation is maintained for the recent version(s) of macOS and required
 processors:
 
-| Requirement | Version    |
-|-------------|------------|
-| macOS       | Tahoe 16.x |
-| Processor   | Apple Mx   |
+| Requirement | Version          |
+|-------------|------------------|
+| macOS       | Golden Gate 27.x |
+| Processor   | Apple Mx         |
 
 ---
 
@@ -60,8 +60,10 @@ cd env-setup
 
 #### Required Packages (Standard Tools)
 
+* `appgrid` - Application manager
 * `bats` - Bash Automated Testing System
 * `claude_code` - Anthropic's official CLI for Claude
+* `claude_desktop` - Anthropic's official Claude Desktop app
 * `dockutil` - Dock management utility
 * `gcc` - GNU Compiler Collection
 * `google_chrome` - Google Chrome web browser
@@ -69,6 +71,7 @@ cd env-setup
 * `jq` - JSON processor
 * `maccy` - Clipboard manager
 * `node` - Node.js runtime
+* `obsidian` - Knowledge base and note-taking app
 * `os_prefs` - macOS preferences configuration
 * `pip` - Python package installer
 * `pycharm` - JetBrains IDE for Python
@@ -78,7 +81,7 @@ cd env-setup
 
 #### Additional Packages (Optional Tools)
 
-* `docker_compose` - Docker Compose tool for defining multi-container applications
+* `chatgpt_desktop` - OpenAI's official ChatGPT Desktop app
 * `docker_desktop` - Docker Desktop container platform
 * `gnused` - GNU implementation of sed
 * `gradle` - Build automation tool
@@ -89,7 +92,6 @@ cd env-setup
 * `kotlin` - Kotlin programming language
 * `ktlint` - Kotlin linter
 * `llama_cpp` - C/C++ implementation for running LLMs locally
-* `minikube` - Local Kubernetes cluster
 * `neo4j_desktop` - Graph database management system
 * `ollama` - Run large language models locally
 * `postgres` - PostgresSQL database
@@ -127,6 +129,21 @@ bin/setup-workstation.sh install all
 ```bash
 bin/setup-workstation.sh install <package>
 ```
+
+### Customizing the Dock
+
+The `os_prefs` package configures a core Dock layout shared by every
+workstation (`packages/os_prefs.sh`). To add personal apps on top of the core
+layout without committing them to this repo:
+
+```bash
+cp .custom-os-prefs.sh custom-os-prefs.sh
+```
+
+Edit `.custom-os-prefs.sh` and add `dockutil --add` entries for your own apps
+inside the `install_custom_os_prefs()` function. This file is gitignored, so
+it stays local. If `.custom-os-prefs.sh` is not present, `os_prefs` installs
+the core Dock layout only.
 
 ### Uninstall Specific Tools
 

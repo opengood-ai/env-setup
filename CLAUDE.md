@@ -102,14 +102,29 @@ The package system uses a convention-based approach:
 - Dependencies can be declared via `get_<package>_dependencies()` function
 - Package arrays in `config/packages.sh`:
     - `base_packages`: Core tools (homebrew, vim, bash, bash_it, git)
-    - `required_packages`: Standard development tools (bats, claude_code, dockutil,
-      gcc, google_chrome, iterm, jq, maccy, node, os_prefs, pip, pycharm, python,
-      rectangle, uv)
-    - `optional_packages`: Additional tools (docker_compose, docker_desktop, gnused,
-      gradle, intellij_idea, java, jenv, kafka, kotlin, ktlint, llama_cpp,
-      minikube, neo4j_desktop, ollama, postgres, sqlite)
+    - `required_packages`: Standard development tools (appgrid, bats, claude_code,
+      claude_desktop, dockutil, gcc, google_chrome, iterm, jq, maccy, node,
+      obsidian, os_prefs, pip, pycharm, python, rectangle, uv)
+    - `optional_packages`: Additional tools (chatgpt_desktop, docker_desktop,
+      gnused, gradle, intellij_idea, java, jenv, kafka, kotlin, ktlint,
+      llama_cpp, neo4j_desktop, ollama, postgres, sqlite)
     - `supported_node_packages`: Node.js packages
     - `supported_pip_packages`: Python packages
+
+### Dock Customization (`os_prefs` package)
+
+`packages/os_prefs.sh` installs a core Dock layout shared by all
+workstations, then optionally layers personal apps on top:
+
+- After adding core apps, `install_os_prefs()` sources `.custom-os-prefs.sh`
+  from the repo root (if present) and calls its `install_custom_os_prefs()`
+  function.
+- `.custom-os-prefs.sh` is gitignored so personal app choices never get
+  committed.
+- `.custom-os-prefs.sh` (a dotfile, tracked in git) is the template — copy it
+  to `.custom-os-prefs.sh` and edit it to customize.
+- If `.custom-os-prefs.sh` does not exist, `install_os_prefs()` logs a warning
+  and continues with the core layout only (non-fatal).
 
 ### JetBrains Integration
 

@@ -2,6 +2,7 @@
 apps_dir=/Applications
 downloads_dir=~/Downloads
 library_dir=~/Library
+sys_apps_dir=/System/Applications
 volumes_dir=/Volumes
 
 # macOS user library directories
