@@ -221,4 +221,4 @@ cython_debug/
 ### Env Setup ###
 
 # Personal Dock customizations (see .custom-os-prefs.sh for the template)
-/.custom-os-prefs.sh
+/custom-os-prefs.sh
