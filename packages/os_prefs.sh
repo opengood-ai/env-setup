@@ -43,7 +43,7 @@ install_os_prefs() {
     write_success "Done!"
     write_blank_line
 
-    write_info "Configuring Dock with custom applications layout..."
+    write_info "Configuring Dock applications layout..."
     write_blank_line
 
     write_info "Removing all Dock applications..."
@@ -51,89 +51,64 @@ install_os_prefs() {
     write_success "Done!"
     write_blank_line
 
-    write_info "Adding custom applications to Dock..."
+    write_info "Adding core applications to Dock..."
 
     # Organization
-    dockutil --add "${apps_dir}/AppGrid.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'AppGrid' --no-restart 2>/dev/null || true
+    dockutil --add "${apps_dir}/AppGridMac.app" 2>/dev/null || true
+    dockutil --add '' --type small-spacer --after 'AppGridMac' 2>/dev/null || true
 
-    dockutil --add "${apps_dir}/1Password.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Passwords.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/eero.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'eero' --no-restart 2>/dev/null || true
+    # Security
+    dockutil --add "${sys_apps_dir}/Passwords.app" 2>/dev/null || true
+    dockutil --add '' --type small-spacer --after 'Passwords' 2>/dev/null || true
 
     # Web Browsers
-    dockutil --add "${apps_dir}/Safari.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Google Chrome.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'Google Chrome' --no-restart 2>/dev/null || true
+    dockutil --add "${apps_dir}/Safari.app" 2>/dev/null || true
+    dockutil --add "${apps_dir}/Google Chrome.app" 2>/dev/null || true
+    dockutil --add '' --type small-spacer --after 'Google Chrome'
 
     # Email, Messaging & Video
-    dockutil --add "${apps_dir}/Canary Mail.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Messages.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/FaceTime.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Microsoft Outlook.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Microsoft Teams.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'Microsoft Teams' --no-restart 2>/dev/null || true
+    dockutil --add "${sys_apps_dir}/Messages.app"
+    dockutil --add "${sys_apps_dir}/FaceTime.app" 2>/dev/null || true
+    dockutil --add '' --type small-spacer --after 'FaceTime' 2>/dev/null || true
 
     # Productivity
-    dockutil --add "${apps_dir}/Obsidian.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Goodnotes.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/MacWhisper.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Reminders.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Relog.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Calendar.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'Calendar' --no-restart 2>/dev/null || true
+    dockutil --add "${apps_dir}/Obsidian.app" 2>/dev/null || true
+    dockutil --add "${sys_apps_dir}/Calendar.app" 2>/dev/null || true
+    dockutil --add "${sys_apps_dir}/Reminders.app" 2>/dev/null || true
+    dockutil --add '' --type small-spacer --after 'Reminders' 2>/dev/null || true
 
     # Software Engineering
-    dockutil --add "${apps_dir}/PyCharm.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/iTerm.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Neo4j Desktop 2.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Docker.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Orka Desktop.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'Orka Desktop' --no-restart 2>/dev/null || true
+    dockutil --add "${apps_dir}/PyCharm.app" 2>/dev/null || true
+    dockutil --add "${apps_dir}/iTerm.app" 2>/dev/null || true
+    dockutil --add '' --type small-spacer --after 'iTerm' 2>/dev/null || true
 
-    # AI & Computing
-    dockutil --add "${apps_dir}/Claude.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/QIDI Print.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'QIDI Print' --no-restart 2>/dev/null || true
+    # AI & Math
+    dockutil --add "${apps_dir}/Claude.app" 2>/dev/null || true
+    dockutil --add "${apps_dir}/ChatGPT.app" 2>/dev/null || true
+    dockutil --add '' --type small-spacer --after 'ChatGPT' 2>/dev/null || true
 
-    # File Sync and Backup
-    dockutil --add "${apps_dir}/Disk Drill.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/GoodSync.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/pCloud Drive.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/OneDrive.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'OneDrive' --no-restart 2>/dev/null || true
+    # System
+    dockutil --add "${sys_apps_dir}/Phone.app" 2>/dev/null || true
+    dockutil --add "${sys_apps_dir}/iPhone Mirroring.app" 2>/dev/null || true
+    dockutil --add "${sys_apps_dir}/App Store.app" 2>/dev/null || true
+    dockutil --add "${sys_apps_dir}/System Settings.app" 2>/dev/null || true
 
-    # Entertainment
-    dockutil --add "${apps_dir}/TV.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Music.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Photos.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'Photos' --no-restart 2>/dev/null || true
+    write_success "Done!"
+    write_blank_line
 
-    # Creative
-    dockutil --add "${apps_dir}/Canva.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Final Cut Pro.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Wondershare UniConverter 17.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'Wondershare UniConverter 17' --no-restart 2>/dev/null || true
-
-    # System Management & Utilities
-    dockutil --add "${apps_dir}/CleanMyMac_5.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Moonlock.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/iMazing.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/Shortcuts.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'Shortcuts' --no-restart 2>/dev/null || true
-
-    # Home & Location
-    dockutil --add "${apps_dir}/Home.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/SwitchBot.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/FindMy.app" --no-restart 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'FindMy' --no-restart 2>/dev/null || true
-
-    # Continuity & System
-    dockutil --add "${apps_dir}/Phone.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/iPhone Mirroring.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/App Store.app" --no-restart 2>/dev/null || true
-    dockutil --add "${apps_dir}/System Settings.app" 2>/dev/null || true
+    if [[ -f "${setup_dir}/custom-os-prefs.sh" ]]; then
+        write_info "Applying custom Dock preferences from 'custom-os-prefs.sh'..."
+        source "${setup_dir}/custom-os-prefs.sh"
+        if function_exists "install_custom_os_prefs"; then
+            install_custom_os_prefs
+        fi
+        write_success "Done!"
+        write_blank_line
+    else
+        write_warning "WARNING! No 'custom-os-prefs.sh' found in repo root, skipping custom Dock apps."
+        write_warning "Copy '.custom-os-prefs.sh' to 'custom-os-prefs.sh' and customize it to add your own apps."
+        write_blank_line
+    fi
 
     write_info "Refreshing Dock..."
     killall Dock
