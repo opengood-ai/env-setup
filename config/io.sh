@@ -16,6 +16,11 @@ startup_items_dir=${library_dir}/StartupItems
 # Project resources directory
 resources_dir=${setup_dir}/resources
 
+# Pandoc PDF generation paths
+pandoc_dir=~/.pandoc
+pdf_header_file=pdf-header.tex
+tex_bin_dir=/Library/TeX/texbin
+
 # Bash shell paths and configuration
 bash_base=/bin/bash
 bash_latest=/opt/homebrew/bin/bash

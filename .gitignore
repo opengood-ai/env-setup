@@ -220,5 +220,8 @@ cython_debug/
 
 ### Env Setup ###
 
-# Personal Dock customizations (see .custom-os-prefs.sh for the template)
-/custom-os-prefs.sh
+# Personal Dock customizations (see .custom-dock-layout.sh for the template)
+/custom-dock-layout.sh
+
+# Generated PDF LaTeX header for the pandoc package (see packages/pandoc.sh)
+/resources/pdf-header.tex

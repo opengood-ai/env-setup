@@ -131,6 +131,7 @@ time {
 
             install_dockutil
             install_os_prefs
+            install_dock_layout
 
             write_success "-----------------------------------------"
             write_success "Setup complete!"
@@ -198,6 +199,7 @@ time {
             write_success "Done!"
             write_blank_line
 
+            uninstall_dock_layout
             uninstall_os_prefs
             uninstall_dockutil
 

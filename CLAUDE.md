@@ -103,28 +103,36 @@ The package system uses a convention-based approach:
 - Package arrays in `config/packages.sh`:
     - `base_packages`: Core tools (homebrew, vim, bash, bash_it, git)
     - `required_packages`: Standard development tools (appgrid, bats, claude_code,
-      claude_desktop, dockutil, gcc, google_chrome, iterm, jq, maccy, node,
-      obsidian, os_prefs, pip, pycharm, python, rectangle, uv)
-    - `optional_packages`: Additional tools (chatgpt_desktop, docker_desktop,
-      gnused, gradle, intellij_idea, java, jenv, kafka, kotlin, ktlint,
-      llama_cpp, neo4j_desktop, ollama, postgres, sqlite)
+      claude_desktop, dock_layout, dockutil, gcc, google_chrome, iterm, jq,
+      maccy, node, obsidian, os_prefs, pip, pycharm, python, rectangle, uv)
+    - `optional_packages`: Additional tools (1password, aloha, chatgpt_desktop,
+      clean_my_mac, disk_drill, docker_desktop, gnused, goodsync, gradle,
+      imazing, intellij_idea, java, jenv, kafka, kotlin, ktlint, llama_cpp,
+      macwhisper, neo4j_desktop, ollama, pandoc, pcloud_drive, postgres, sqlite,
+      vscode)
     - `supported_node_packages`: Node.js packages
     - `supported_pip_packages`: Python packages
 
-### Dock Customization (`os_prefs` package)
+### Dock Customization (`dock_layout` package)
 
-`packages/os_prefs.sh` installs a core Dock layout shared by all
+`packages/dock_layout.sh` installs a core Dock layout shared by all
 workstations, then optionally layers personal apps on top:
 
-- After adding core apps, `install_os_prefs()` sources `.custom-os-prefs.sh`
-  from the repo root (if present) and calls its `install_custom_os_prefs()`
+- After adding core apps, `install_dock_layout()` sources `custom-dock-layout.sh`
+  from the repo root (if present) and calls its `install_custom_dock_layout()`
   function.
-- `.custom-os-prefs.sh` is gitignored so personal app choices never get
+- `custom-dock-layout.sh` is gitignored so personal app choices never get
   committed.
-- `.custom-os-prefs.sh` (a dotfile, tracked in git) is the template — copy it
-  to `.custom-os-prefs.sh` and edit it to customize.
-- If `.custom-os-prefs.sh` does not exist, `install_os_prefs()` logs a warning
-  and continues with the core layout only (non-fatal).
+- `.custom-dock-layout.sh` (a dotfile, tracked in git) is the template — copy it
+  to `custom-dock-layout.sh` and edit it to customize.
+- If `custom-dock-layout.sh` does not exist, `install_dock_layout()` logs a
+  warning and continues with the core layout only (non-fatal).
+- Dock changes are batched with `begin_dock_batch()` / `commit_dock_batch()`:
+  the Dock process is paused (`SIGSTOP`) while `dockutil` runs with
+  `--no-restart` (via a `dockutil()` wrapper that also covers the custom file),
+  then force-quit once so it relaunches from the new layout. Restarting the Dock
+  after every change races with the Dock rewriting its preferences and yields a
+  random order. An `EXIT` trap resumes the Dock if the script aborts.
 
 ### JetBrains Integration
 

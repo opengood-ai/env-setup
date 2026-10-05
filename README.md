@@ -64,6 +64,7 @@ cd env-setup
 * `bats` - Bash Automated Testing System
 * `claude_code` - Anthropic's official CLI for Claude
 * `claude_desktop` - Anthropic's official Claude Desktop app
+* `dock_layout` - Dock applications layout
 * `dockutil` - Dock management utility
 * `gcc` - GNU Compiler Collection
 * `google_chrome` - Google Chrome web browser
@@ -81,10 +82,16 @@ cd env-setup
 
 #### Additional Packages (Optional Tools)
 
+* `1password` - Password manager
+* `aloha` - Aloha privacy-focused web browser
 * `chatgpt_desktop` - OpenAI's official ChatGPT Desktop app
+* `clean_my_mac` - Mac cleanup and maintenance utility
+* `disk_drill` - Data recovery and disk utility app
 * `docker_desktop` - Docker Desktop container platform
 * `gnused` - GNU implementation of sed
+* `goodsync` - File synchronization and backup tool
 * `gradle` - Build automation tool
+* `imazing` - iPhone and iPad management app
 * `intellij_idea` - JetBrains IDE for Java/Kotlin
 * `java` - Java Development Kit
 * `jenv` - Java environment manager
@@ -92,10 +99,14 @@ cd env-setup
 * `kotlin` - Kotlin programming language
 * `ktlint` - Kotlin linter
 * `llama_cpp` - C/C++ implementation for running LLMs locally
+* `macwhisper` - Speech-to-text transcription app
 * `neo4j_desktop` - Graph database management system
 * `ollama` - Run large language models locally
+* `pandoc` - Universal document converter (with MacTeX, PDF fonts, and the `md_to_pdf` function)
+* `pcloud_drive` - pCloud Drive cloud storage client
 * `postgres` - PostgresSQL database
 * `sqlite` - SQLite embedded database
+* `vscode` - Visual Studio Code editor
 
 ---
 
@@ -132,18 +143,32 @@ bin/setup-workstation.sh install <package>
 
 ### Customizing the Dock
 
-The `os_prefs` package configures a core Dock layout shared by every
-workstation (`packages/os_prefs.sh`). To add personal apps on top of the core
+The `dock_layout` package configures a core Dock layout shared by every
+workstation (`packages/dock_layout.sh`). To add personal apps on top of the core
 layout without committing them to this repo:
 
 ```bash
-cp .custom-os-prefs.sh custom-os-prefs.sh
+cp .custom-dock-layout.sh custom-dock-layout.sh
 ```
 
-Edit `.custom-os-prefs.sh` and add `dockutil --add` entries for your own apps
-inside the `install_custom_os_prefs()` function. This file is gitignored, so
-it stays local. If `.custom-os-prefs.sh` is not present, `os_prefs` installs
+Edit `.custom-dock-layout.sh` and add `dockutil --add` entries for your own apps
+inside the `install_custom_dock_layout()` function. This file is gitignored, so
+it stays local. If `.custom-dock-layout.sh` is not present, `dock_layout` installs
 the core Dock layout only.
+
+### Generating PDFs from Markdown
+
+The `pandoc` package installs pandoc, the MacTeX LaTeX engine (`xelatex`), and
+the Noto Sans, Noto Sans Mono, and DejaVu fonts. It also generates the LaTeX
+header file `resources/pdf-header.tex` (gitignored) and copies it to
+`~/.pandoc/pdf-header.tex`. The `md_to_pdf` function is added to bash-it:
+
+```bash
+md_to_pdf [-m margin] [-f main_font] [-c mono_font] [-s style] [-H header_file] <input.md> [output.pdf]
+```
+
+Relative image paths are resolved from the directory of the Markdown file, and
+the output defaults to the input name with a `.pdf` extension.
 
 ### Uninstall Specific Tools
 
