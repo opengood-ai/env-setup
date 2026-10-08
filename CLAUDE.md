@@ -105,11 +105,16 @@ The package system uses a convention-based approach:
     - `required_packages`: Standard development tools (appgrid, bats, claude_code,
       claude_desktop, dock_layout, dockutil, gcc, google_chrome, iterm, jq,
       maccy, node, obsidian, os_prefs, pip, pycharm, python, rectangle, uv)
-    - `optional_packages`: Additional tools (1password, aloha, chatgpt_desktop,
-      clean_my_mac, disk_drill, docker_desktop, gnused, goodsync, gradle,
-      imazing, intellij_idea, java, jenv, kafka, kotlin, ktlint, llama_cpp,
-      macwhisper, neo4j_desktop, ollama, pandoc, pcloud_drive, postgres, sqlite,
-      vscode)
+    - `optional_packages`: Additional tools (1password, 1password_for_safari,
+      airbuddy, aloha, canary_mail, chatgpt_desktop, clean_my_mac, disk_drill,
+      docker_desktop, easeus_video_downloader, eero, final_cut_pro, gnused,
+      goodsync, gpg_keychain, gradle, imazing, imovie, intellij_idea,
+      istat_menus, jabra_direct, java, jenv, kafka, kotlin, ktlint, llama_cpp,
+      logic_calc, macwhisper, mas, microsoft_office, microsoft_onedrive,
+      microsoft_teams, moonlock, neo4j_desktop, ollama, pandoc, pcloud_drive,
+      pocketcas, postgres, relog, remove_web_limits_for_safari, sqlite,
+      swi_prolog, topaz_video, ultimaker_cura, vscode,
+      wondershare_uniconverter, zoom)
     - `supported_node_packages`: Node.js packages
     - `supported_pip_packages`: Python packages
 
@@ -121,6 +126,9 @@ workstations, then optionally layers personal apps on top:
 - After adding core apps, `install_dock_layout()` sources `custom-dock-layout.sh`
   from the repo root (if present) and calls its `install_custom_dock_layout()`
   function.
+- After the custom apps, the `~/Downloads` folder is added as a fan-view folder
+  so it sits just before the Trash. `uninstall_dock_layout()` clears the Dock
+  with `dockutil --remove all`, which also removes the Downloads folder.
 - `custom-dock-layout.sh` is gitignored so personal app choices never get
   committed.
 - `.custom-dock-layout.sh` (a dotfile, tracked in git) is the template — copy it

@@ -18,6 +18,13 @@ install_custom_dock_layout() {
 
     # Productivity
     dockutil --add "${apps_dir}/Relog.app" --after 'Reminders' 2>/dev/null || true
+    dockutil --add '' --type small-spacer --after 'Relog' 2>/dev/null || true
+
+    # Microsoft Office
+    dockutil --add "${apps_dir}/Microsoft Excel.app" --before 'PyCharm' 2>/dev/null || true
+    dockutil --add "${apps_dir}/Microsoft Word.app" --after 'Microsoft Excel' 2>/dev/null || true
+    dockutil --add "${apps_dir}/Microsoft PowerPoint.app" --after 'Microsoft Word' 2>/dev/null || true
+    dockutil --add '' --type small-spacer --after 'Microsoft PowerPoint' 2>/dev/null || true
 
     # Software Engineering
     dockutil --add "${apps_dir}/Visual Studio Code.app" --after 'PyCharm' 2>/dev/null || true
@@ -26,6 +33,7 @@ install_custom_dock_layout() {
     # AI & Math
     dockutil --add "${apps_dir}/MacWhisper.app" --after 'ChatGPT' 2>/dev/null || true
     dockutil --add "${apps_dir}/PocketCAS.app" --after 'MacWhisper' 2>/dev/null || true
+    dockutil --add "${apps_dir}/Logic Calc.app" --after 'PocketCAS' 2>/dev/null || true
 
     # File Sync and Backup
     dockutil --add "${apps_dir}/Disk Drill.app" --before 'Phone' 2>/dev/null || true
@@ -35,8 +43,8 @@ install_custom_dock_layout() {
     dockutil --add '' --type small-spacer --after 'OneDrive' 2>/dev/null || true
 
     # Entertainment
-    dockutil --add "${sys_apps_dir}/TV.app" --before 'Phone' 2>/dev/null || true
     dockutil --add "${sys_apps_dir}/Music.app" --before 'Phone' 2>/dev/null || true
+    dockutil --add "${sys_apps_dir}/TV.app" --before 'Phone' 2>/dev/null || true
     dockutil --add "${sys_apps_dir}/Photos.app" --before 'Phone' 2>/dev/null || true
     dockutil --add '' --type small-spacer --after 'Photos' 2>/dev/null || true
 
