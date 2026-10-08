@@ -118,6 +118,11 @@ install_dock_layout() {
 
     apply_custom_dock_layout
 
+    write_info "Adding Downloads folder to Dock..."
+    dockutil --add "${downloads_dir}" --view fan --display folder --sort dateadded 2>/dev/null || true
+    write_success "Done!"
+    write_blank_line
+
     write_info "Refreshing Dock..."
     commit_dock_batch
     write_blank_line
