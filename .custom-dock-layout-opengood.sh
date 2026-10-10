@@ -12,19 +12,11 @@ install_custom_dock_layout() {
 
     # Email, Messaging & Video
     dockutil --add "${apps_dir}/Canary Mail.app" --before 'Messages' 2>/dev/null || true
-    dockutil --add "${apps_dir}/Microsoft Outlook.app" --after 'QuickTime Player' 2>/dev/null || true
-    dockutil --add "${apps_dir}/Microsoft Teams.app" --after 'Microsoft Outlook' 2>/dev/null || true
-    dockutil --add "${apps_dir}/zoom.us.app" --after 'Microsoft Teams' 2>/dev/null || true
+    dockutil --add "${apps_dir}/zoom.us.app" --after 'QuickTime Player' 2>/dev/null || true
 
     # Productivity
     dockutil --add "${apps_dir}/Relog.app" --after 'Reminders' 2>/dev/null || true
     dockutil --add '' --type small-spacer --after 'Relog' 2>/dev/null || true
-
-    # Microsoft Office
-    dockutil --add "${apps_dir}/Microsoft Excel.app" --before 'PyCharm' 2>/dev/null || true
-    dockutil --add "${apps_dir}/Microsoft Word.app" --after 'Microsoft Excel' 2>/dev/null || true
-    dockutil --add "${apps_dir}/Microsoft PowerPoint.app" --after 'Microsoft Word' 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'Microsoft PowerPoint' 2>/dev/null || true
 
     # Software Engineering
     dockutil --add "${apps_dir}/Visual Studio Code.app" --after 'PyCharm' 2>/dev/null || true
@@ -34,6 +26,14 @@ install_custom_dock_layout() {
     dockutil --add "${apps_dir}/MacWhisper.app" --after 'ChatGPT' 2>/dev/null || true
     dockutil --add "${apps_dir}/PocketCAS.app" --after 'MacWhisper' 2>/dev/null || true
     dockutil --add "${apps_dir}/Logic Calc.app" --after 'PocketCAS' 2>/dev/null || true
+
+    # Microsoft Office
+    dockutil --add "${apps_dir}/Microsoft Outlook.app" --before 'Phone' 2>/dev/null || true
+    dockutil --add "${apps_dir}/Microsoft Teams.app" --before 'Phone' 2>/dev/null || true
+    dockutil --add "${apps_dir}/Microsoft Excel.app" --before 'Phone' 2>/dev/null || true
+    dockutil --add "${apps_dir}/Microsoft Word.app" --before 'Phone' 2>/dev/null || true
+    dockutil --add "${apps_dir}/Microsoft PowerPoint.app" --before 'Phone' 2>/dev/null || true
+    dockutil --add '' --type small-spacer --after 'Microsoft PowerPoint' 2>/dev/null || true
 
     # File Sync and Backup
     dockutil --add "${apps_dir}/Disk Drill.app" --before 'Phone' 2>/dev/null || true
