@@ -83,7 +83,7 @@ install_git() {
         git config --global alias.pl "pull -r"
         git config --global alias.pd "!git status && git checkout main && git pull -r && git br -D $1 && git br && git status"
         git config --global alias.pm "!git status && git checkout main && git pull -r && git checkout $1 && git merge main && git push -u origin \"$(git symbolic-ref --short HEAD)\" && git status"
-        git config --global alias.ps "!git status && git add -A && git status && git commit -S -m \"$1\" && git pull -r && git push -u origin \"$(git symbolic-ref --short HEAD)\" && git status"
+        git config --global alias.ps '!f() { b=$(git symbolic-ref --short HEAD) && git status && git add -A && git status && git commit -S -m "$1" && if git rev-parse --abbrev-ref "@{u}" >/dev/null 2>&1; then git pull -r; fi && git push -u origin "$b" && git status; }; f'
         git config --global alias.ra "rebase --abort"
         git config --global alias.rc "rebase --continue"
         git config --global alias.rum "rebase main@{u}"
