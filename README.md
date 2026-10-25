@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/opengood-ai/env-setup/master/LICENSE)
 
 Automated environment setup and configuration for OpenGood computing
-environments
+environments.
 
 ## Pre-Requisites
 
@@ -117,13 +117,13 @@ cd env-setup
 * `microsoft_office` - Microsoft Office 365 apps (Word, Excel, PowerPoint, Outlook)
 * `microsoft_onedrive` - Microsoft OneDrive cloud storage client
 * `microsoft_teams` - Microsoft Teams collaboration app
-* `moonlock` - Moonlock malware protection and security app
 * `neo4j_desktop` - Graph database management system
 * `ollama` - Run large language models locally
 * `pandoc` - Universal document converter (with MacTeX, PDF fonts, and the `md_to_pdf` function)
 * `pcloud_drive` - pCloud Drive cloud storage client
 * `pocketcas` - PocketCAS mathematics toolkit
 * `postgres` - PostgresSQL database
+* `raindrop_io` - Raindrop.io bookmark manager
 * `relog` - Relog task logger
 * `remove_web_limits_for_safari` - Remove Web Limits for Safari extension
 * `sqlite` - SQLite embedded database

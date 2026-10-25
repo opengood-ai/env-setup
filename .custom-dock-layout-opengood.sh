@@ -9,6 +9,7 @@ install_custom_dock_layout() {
 
     # Web Browsers
     dockutil --add "${apps_dir}/Aloha.app" --after 'Google Chrome' 2>/dev/null || true
+    dockutil --add "${apps_dir}/Raindrop.io.app" --after 'Aloha' 2>/dev/null || true
 
     # Email, Messaging & Video
     dockutil --add "${apps_dir}/Canary Mail.app" --before 'Messages' 2>/dev/null || true
@@ -63,7 +64,6 @@ install_custom_dock_layout() {
         fi
     done
     unset clean_my_mac
-    dockutil --add "${apps_dir}/Moonlock.app" --before 'Phone' 2>/dev/null || true
     dockutil --add "${apps_dir}/iMazing.app" --before 'Phone' 2>/dev/null || true
     dockutil --add "${sys_apps_dir}/Shortcuts.app" --before 'Phone' 2>/dev/null || true
     dockutil --add '' --type small-spacer --after 'Shortcuts' 2>/dev/null || true
