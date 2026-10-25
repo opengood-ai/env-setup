@@ -98,6 +98,7 @@ cd env-setup
 * `goodsync` - File synchronization and backup tool
 * `gpg_keychain` - GPG Keychain for managing GPG keys (GPG Suite without GPG Mail)
 * `gradle` - Build automation tool
+* `guardian` - Guardian Firewall app
 * `imazing` - iPhone and iPad management app
 * `imovie` - iMovie video editor
 * `intellij_idea` - JetBrains IDE for Java/Kotlin
@@ -111,6 +112,7 @@ cd env-setup
 * `llama_cpp` - C/C++ implementation for running LLMs locally
 * `logic_calc` - Logic Calc calculator
 * `macwhisper` - Speech-to-text transcription app
+* `malwarebytes` - Malwarebytes malware protection and removal app
 * `mas` - Mac App Store command-line interface
 * `microsoft_office` - Microsoft Office 365 apps (Word, Excel, PowerPoint, Outlook)
 * `microsoft_onedrive` - Microsoft OneDrive cloud storage client
