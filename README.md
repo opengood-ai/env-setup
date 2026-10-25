@@ -123,7 +123,6 @@ cd env-setup
 * `pcloud_drive` - pCloud Drive cloud storage client
 * `pocketcas` - PocketCAS mathematics toolkit
 * `postgres` - PostgresSQL database
-* `raindrop_io` - Raindrop.io bookmark manager
 * `relog` - Relog task logger
 * `remove_web_limits_for_safari` - Remove Web Limits for Safari extension
 * `sqlite` - SQLite embedded database
