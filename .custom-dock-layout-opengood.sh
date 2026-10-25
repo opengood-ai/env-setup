@@ -9,7 +9,6 @@ install_custom_dock_layout() {
 
     # Web Browsers
     dockutil --add "${apps_dir}/Aloha.app" --after 'Google Chrome' 2>/dev/null || true
-    dockutil --add "${apps_dir}/Raindrop.io.app" --after 'Aloha' 2>/dev/null || true
 
     # Email, Messaging & Video
     dockutil --add "${apps_dir}/Canary Mail.app" --before 'Messages' 2>/dev/null || true

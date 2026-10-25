@@ -112,7 +112,7 @@ The package system uses a convention-based approach:
       istat_menus, jabra_direct, java, jenv, kafka, kotlin, ktlint, llama_cpp,
       logic_calc, macwhisper, malwarebytes, mas, microsoft_office, microsoft_onedrive,
       microsoft_teams, neo4j_desktop, ollama, pandoc, pcloud_drive,
-      pocketcas, postgres, raindrop_io, relog, remove_web_limits_for_safari, sqlite,
+      pocketcas, postgres, relog, remove_web_limits_for_safari, sqlite,
       swi_prolog, topaz_video, ultimaker_cura, vscode,
       wondershare_uniconverter, zoom)
     - `supported_node_packages`: Node.js packages
