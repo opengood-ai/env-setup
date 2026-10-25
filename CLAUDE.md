@@ -108,11 +108,11 @@ The package system uses a convention-based approach:
     - `optional_packages`: Additional tools (1password, 1password_for_safari,
       airbuddy, aloha, canary_mail, chatgpt_desktop, clean_my_mac, disk_drill,
       docker_desktop, easeus_video_downloader, eero, final_cut_pro, gnused,
-      goodsync, gpg_keychain, gradle, imazing, imovie, intellij_idea,
+      goodsync, gpg_keychain, gradle, guardian, imazing, imovie, intellij_idea,
       istat_menus, jabra_direct, java, jenv, kafka, kotlin, ktlint, llama_cpp,
-      logic_calc, macwhisper, mas, microsoft_office, microsoft_onedrive,
-      microsoft_teams, moonlock, neo4j_desktop, ollama, pandoc, pcloud_drive,
-      pocketcas, postgres, relog, remove_web_limits_for_safari, sqlite,
+      logic_calc, macwhisper, malwarebytes, mas, microsoft_office, microsoft_onedrive,
+      microsoft_teams, neo4j_desktop, ollama, pandoc, pcloud_drive,
+      pocketcas, postgres, raindrop_io, relog, remove_web_limits_for_safari, sqlite,
       swi_prolog, topaz_video, ultimaker_cura, vscode,
       wondershare_uniconverter, zoom)
     - `supported_node_packages`: Node.js packages
