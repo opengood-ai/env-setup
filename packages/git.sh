@@ -1,36 +1,36 @@
 install_git() {
     write_info "Installing Git package..."
 
-    if ! hash git 2>/dev/null; then
-        write_info "Enter Git user name (i.e. John Smith)..."
+    if ! brew list git &>/dev/null; then
+        write_info "Enter Git user name (e.g John Smith)..."
         read -r git_user_name
         write_blank_line
 
-        write_info "Enter Git user email (i.e. jsmith@users.noreply.github.com)..."
+        write_info "Enter Git user email (e.g jsmith@users.noreply.github.com)..."
         read -r git_user_email
         write_blank_line
 
-        write_info "Enter GitHub user name (i.e. jsmith)..."
+        write_info "Enter GitHub user name (e.g jsmith)..."
         read -r github_user_name
         write_blank_line
 
-        write_info "Enter GitHub access token (i.e. xcxcdt45tysfgfghty67tyhgghgsd544)..."
+        write_info "Enter GitHub access token (e.g xcxcdt45tysfgfghty67tyhgghgsd544)..."
         local github_access_token
         github_access_token="$(read_password_input)"
         write_blank_line
 
-        write_info "Enter GitHub GPG signing key (i.e. X9255HU3)..."
+        write_info "Enter GitHub GPG signing key (e.g. X9255HU3)..."
         local github_gpg_signing_key
         github_gpg_signing_key="$(read_password_input)"
         write_blank_line
 
         write_info "Installing Git..."
-        brew list git &>/dev/null || brew install git
+        brew install git
         write_success "Done!"
         write_blank_line
 
         write_info "Creating Git symlink..."
-        sudo ln -s /opt/homebrew/bin/git /usr/local/bin/git
+        sudo ln -sfn /opt/homebrew/bin/git /usr/local/bin/git
         write_success "Done!"
         write_blank_line
 
@@ -104,11 +104,15 @@ install_git() {
         write_blank_line
 
         write_info "Configuring GitHub properties...'"
-        cat <<EOF >>"${github_properties}"
+        if ! grep -qs '^github.user=' "${github_properties}"; then
+            cat <<EOF >>"${github_properties}"
 github.user=$github_user_name
 github.access.token=$github_access_token
 
 EOF
+        else
+            write_info "GitHub properties already configured..."
+        fi
         source "${bash_profile}"
         write_success "Done!"
     else

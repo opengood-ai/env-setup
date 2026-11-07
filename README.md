@@ -60,7 +60,6 @@ cd env-setup
 
 #### Required Packages (Standard Tools)
 
-* `appgrid` - Application manager
 * `bats` - Bash Automated Testing System
 * `claude_code` - Anthropic's official CLI for Claude
 * `claude_desktop` - Anthropic's official Claude Desktop app
@@ -84,15 +83,12 @@ cd env-setup
 
 * `1password` - Password manager
 * `1password_for_safari` - 1Password extension for Safari
-* `airbuddy` - AirPods companion app
 * `aloha` - Aloha privacy-focused web browser
 * `canary_mail` - Canary Mail email client
 * `chatgpt_desktop` - OpenAI's official ChatGPT Desktop app
 * `clean_my_mac` - Mac cleanup and maintenance utility
 * `disk_drill` - Data recovery and disk utility app
 * `docker_desktop` - Docker Desktop container platform
-* `easeus_video_downloader` - EaseUS Video Downloader
-* `eero` - eero Wi-Fi system app
 * `final_cut_pro` - Final Cut Pro video editor
 * `gnused` - GNU implementation of sed
 * `goodsync` - File synchronization and backup tool
@@ -110,7 +106,6 @@ cd env-setup
 * `kotlin` - Kotlin programming language
 * `ktlint` - Kotlin linter
 * `llama_cpp` - C/C++ implementation for running LLMs locally
-* `logic_calc` - Logic Calc calculator
 * `macwhisper` - Speech-to-text transcription app
 * `malwarebytes` - Malwarebytes malware protection and removal app
 * `mas` - Mac App Store command-line interface
@@ -123,7 +118,6 @@ cd env-setup
 * `pcloud_drive` - pCloud Drive cloud storage client
 * `pocketcas` - PocketCAS mathematics toolkit
 * `postgres` - PostgresSQL database
-* `relog` - Relog task logger
 * `remove_web_limits_for_safari` - Remove Web Limits for Safari extension
 * `sqlite` - SQLite embedded database
 * `swi_prolog` - SWI-Prolog logic programming language

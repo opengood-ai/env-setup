@@ -102,17 +102,17 @@ The package system uses a convention-based approach:
 - Dependencies can be declared via `get_<package>_dependencies()` function
 - Package arrays in `config/packages.sh`:
     - `base_packages`: Core tools (homebrew, vim, bash, bash_it, git)
-    - `required_packages`: Standard development tools (appgrid, bats, claude_code,
+    - `required_packages`: Standard development tools (bats, claude_code,
       claude_desktop, dock_layout, dockutil, gcc, google_chrome, iterm, jq,
       maccy, node, obsidian, os_prefs, pip, pycharm, python, rectangle, uv)
     - `optional_packages`: Additional tools (1password, 1password_for_safari,
-      airbuddy, aloha, canary_mail, chatgpt_desktop, clean_my_mac, disk_drill,
-      docker_desktop, easeus_video_downloader, eero, final_cut_pro, gnused,
+      aloha, canary_mail, chatgpt_desktop, clean_my_mac, disk_drill,
+      docker_desktop, final_cut_pro, gnused,
       goodsync, gpg_keychain, gradle, guardian, imazing, imovie, intellij_idea,
       istat_menus, jabra_direct, java, jenv, kafka, kotlin, ktlint, llama_cpp,
-      logic_calc, macwhisper, malwarebytes, mas, microsoft_office, microsoft_onedrive,
+      macwhisper, malwarebytes, mas, microsoft_office, microsoft_onedrive,
       microsoft_teams, neo4j_desktop, ollama, pandoc, pcloud_drive,
-      pocketcas, postgres, relog, remove_web_limits_for_safari, sqlite,
+      pocketcas, postgres, remove_web_limits_for_safari, sqlite,
       swi_prolog, topaz_video, ultimaker_cura, vscode,
       wondershare_uniconverter, zoom)
     - `supported_node_packages`: Node.js packages

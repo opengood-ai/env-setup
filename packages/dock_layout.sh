@@ -70,10 +70,6 @@ install_dock_layout() {
 
     write_info "Adding core applications to Dock..."
 
-    # Organization
-    dockutil --add "${apps_dir}/AppGridMac.app" 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'AppGridMac' 2>/dev/null || true
-
     # Security
     dockutil --add "${sys_apps_dir}/Passwords.app" 2>/dev/null || true
     dockutil --add '' --type small-spacer --after 'Passwords' 2>/dev/null || true

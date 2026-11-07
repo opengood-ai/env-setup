@@ -5,7 +5,6 @@ install_custom_dock_layout() {
 
     # Security
     dockutil --add "${apps_dir}/1Password.app" --before 'Passwords' 2>/dev/null || true
-    dockutil --add "${apps_dir}/eero.app" --after 'Passwords' 2>/dev/null || true
 
     # Web Browsers
     dockutil --add "${apps_dir}/Aloha.app" --after 'Google Chrome' 2>/dev/null || true
@@ -14,10 +13,6 @@ install_custom_dock_layout() {
     dockutil --add "${apps_dir}/Canary Mail.app" --before 'Messages' 2>/dev/null || true
     dockutil --add "${apps_dir}/zoom.us.app" --after 'QuickTime Player' 2>/dev/null || true
 
-    # Productivity
-    dockutil --add "${apps_dir}/Relog.app" --after 'Reminders' 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'Relog' 2>/dev/null || true
-
     # Software Engineering
     dockutil --add "${apps_dir}/Visual Studio Code.app" --after 'PyCharm' 2>/dev/null || true
     dockutil --add "${apps_dir}/UltiMaker Cura.app" --after 'iTerm' 2>/dev/null || true
@@ -25,7 +20,6 @@ install_custom_dock_layout() {
     # AI & Math
     dockutil --add "${apps_dir}/MacWhisper.app" --after 'ChatGPT' 2>/dev/null || true
     dockutil --add "${apps_dir}/PocketCAS.app" --after 'MacWhisper' 2>/dev/null || true
-    dockutil --add "${apps_dir}/Logic Calc.app" --after 'PocketCAS' 2>/dev/null || true
 
     # Microsoft Office
     dockutil --add "${apps_dir}/Microsoft Outlook.app" --before 'Phone' 2>/dev/null || true
@@ -51,9 +45,8 @@ install_custom_dock_layout() {
     # Creative
     dockutil --add "${apps_dir}/Final Cut Pro.app" --before 'Phone' 2>/dev/null || true
     dockutil --add "${apps_dir}/Topaz Video.app" --before 'Phone' 2>/dev/null || true
-    dockutil --add "${apps_dir}/EaseUS Video Downloader.app" --before 'Phone' 2>/dev/null || true
-    dockutil --add "${apps_dir}/Wondershare UniConverter 17.app" --before 'Phone' 2>/dev/null || true
-    dockutil --add '' --type small-spacer --after 'Wondershare UniConverter 17' 2>/dev/null || true
+    dockutil --add "${apps_dir}/Wondershare UniConverter 18.app" --before 'Phone' 2>/dev/null || true
+    dockutil --add '' --type small-spacer --after 'Wondershare UniConverter 18' 2>/dev/null || true
 
     # System Management & Utilities
     # The brew cask installs CleanMyMac.app; a direct download installs CleanMyMac_5.app
