@@ -43,6 +43,7 @@ install_git() {
         git config --global pull.rebase true
         git config --global push.autoSetupRemote true
         git config --global commit.gpgSign true
+        git config --global credential.useHttpPath true
         write_success "Done!"
         write_blank_line
 
