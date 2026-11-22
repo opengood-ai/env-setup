@@ -6,9 +6,6 @@ install_custom_dock_layout() {
     # Security
     dockutil --add "${apps_dir}/1Password.app" --before 'Passwords' 2>/dev/null || true
 
-    # Web Browsers
-    dockutil --add "${apps_dir}/Aloha.app" --after 'Google Chrome' 2>/dev/null || true
-
     # Email, Messaging & Video
     dockutil --add "${apps_dir}/Canary Mail.app" --before 'Messages' 2>/dev/null || true
     dockutil --add "${apps_dir}/zoom.us.app" --after 'QuickTime Player' 2>/dev/null || true
